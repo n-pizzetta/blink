@@ -1,15 +1,30 @@
-# Blink
+<h1 align="center">
+  <img src="./docs/logo.svg" alt="" width="64" valign="middle" /> Blink
+</h1>
 
-**Your terminal pane lights up when your coding agent needs you.**
+<p align="center">
+  <a href="https://github.com/n-pizzetta/blink/releases"><img src="https://img.shields.io/github/v/release/n-pizzetta/blink?style=flat&amp;color=08C" alt="Latest release" /></a>
+  <img src="https://img.shields.io/badge/works%20with-Claude%20Code%20%C2%B7%20Codex%20%C2%B7%20Copilot%20CLI-FF912B?style=flat" alt="Works with Claude Code, Codex and Copilot CLI" />
+  <img src="https://img.shields.io/badge/idle-0%25%20CPU-3DDC97?style=flat" alt="0% CPU when nothing waits" />
+  <img src="https://img.shields.io/badge/100%25%20local-no%20telemetry-3DDC97?style=flat" alt="100% local, no telemetry" />
+  <img src="https://img.shields.io/badge/license-MIT-08C?style=flat" alt="License: MIT" />
+</p>
+
+<p align="center">
+  <strong>Your terminal pane lights up when your coding agent needs you.</strong><br/>
+  Stop checking every pane: the agent waiting for a permission, an answer or your next message glows amber until you look.
+</p>
+
+<h3 align="center"><a href="#install"><ins>Install for Claude Code, Codex or Copilot CLI</ins></a></h3>
+
+<p align="center">
+  <img src="./docs/blink.svg" width="960" alt="A Ghostty window split in three panes. The left pane, where Claude Code asks to approve an edit, pulses amber. Codex keeps working in the top-right pane, and the user types in the bottom-right shell. A hidden tab shows a bell in its title." />
+</p>
 
 When Claude Code, Codex CLI or GitHub Copilot CLI needs you (a permission, a
 question, a plan to approve, or simply the end of its answer), Blink lights up
 that agent's own terminal pane. In Ghostty the whole pane pulses amber while you
 work elsewhere, and stops as soon as you type in it.
-
-<p align="center">
-  <img src="docs/blink.svg" width="900" alt="A Ghostty window split in three panes. The left pane, where Claude Code asks to approve an edit, pulses amber. Codex keeps working in the top-right pane, and the user types in the bottom-right shell. A hidden tab shows a bell in its title.">
-</p>
 
 - **Nothing to launch.** Open any terminal window and start `claude`, `codex`
   or `copilot` as usual: no wrapper, no alias. Windows that were already open
@@ -172,6 +187,17 @@ References: [Ghostty shaders](https://ghostty.org/docs/config/reference#custom-s
 [Copilot CLI hooks](https://docs.github.com/en/copilot/reference/hooks-reference),
 [iTerm2 escape codes](https://iterm2.com/documentation-escape-codes.html).
 
+## Feedback and security
+
+- **Ideas, bugs, a terminal to support:** [open an issue](https://github.com/n-pizzetta/blink/issues).
+- **Security:** see [`SECURITY.md`](./SECURITY.md) to report a vulnerability privately.
+
+## See also
+
+[Marey](https://github.com/n-pizzetta/marey), the flight recorder for your
+Claude Code and Codex sessions: replay every turn, see where the tokens went,
+and spot the sessions that went sideways.
+
 ## License
 
-MIT, see [LICENSE](LICENSE).
+Blink is free and open source under the [MIT License](./LICENSE).
