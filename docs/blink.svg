@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="530" viewBox="0 0 940 530" xml:space="preserve" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="13">
+  <title>Blink: the pane of the agent that waits for you pulses amber</title>
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+    <clipPath id="window"><rect x="20" y="12" width="900" height="490" rx="12"/></clipPath>
+  </defs>
+
+  <rect x="20" y="12" width="900" height="490" rx="12" fill="#1e1e2e" filter="url(#shadow)"/>
+  <g clip-path="url(#window)">
+    <!-- Title bar and tabs: the hidden tab got the bell. -->
+    <rect x="20" y="12" width="900" height="40" fill="#11111b"/>
+    <circle cx="44" cy="32" r="6" fill="#f38ba8"/>
+    <circle cx="64" cy="32" r="6" fill="#f9e2af"/>
+    <circle cx="84" cy="32" r="6" fill="#a6e3a1"/>
+    <rect x="110" y="18" width="403" height="30" rx="6" fill="#1e1e2e"/>
+    <text x="311" y="37" text-anchor="middle" fill="#cdd6f4">~/dev/shop</text>
+    <text x="717" y="37" text-anchor="middle" fill="#a6adc8">🔔 ~/dev/api</text>
+
+    <!-- Left pane: Claude Code waits for an approval. -->
+    <text x="36" y="80" fill="#6c7086">&gt;</text>
+    <text x="52" y="80" fill="#cdd6f4">run the tests and fix what fails</text>
+    <text x="36" y="122" fill="#a6e3a1">●</text>
+    <text x="52" y="122" fill="#cdd6f4">Bash(pnpm test)</text>
+    <text x="52" y="143" fill="#6c7086">└</text>
+    <text x="68" y="143" fill="#a6adc8">3 failed, 41 passed</text>
+    <text x="36" y="185" fill="#a6e3a1">●</text>
+    <text x="52" y="185" fill="#cdd6f4">Update(src/cart.test.ts)</text>
+    <text x="52" y="206" fill="#f38ba8">- expect(total).toBe(40)</text>
+    <text x="52" y="227" fill="#a6e3a1">+ expect(total).toBe(42)</text>
+    <rect x="32" y="248" width="422" height="108" rx="6" fill="none" stroke="#45475a"/>
+    <text x="46" y="272" fill="#cdd6f4" font-weight="bold">Do you want to make this edit?</text>
+    <text x="46" y="296" fill="#89b4fa">❯</text>
+    <text x="62" y="296" fill="#89b4fa">1. Yes</text>
+    <text x="62" y="317" fill="#cdd6f4">2. Yes, allow all edits this session</text>
+    <text x="62" y="338" fill="#cdd6f4">3. No, and tell Claude what to do</text>
+
+    <!-- Top right: Codex keeps working, nothing to signal. -->
+    <text x="487" y="80" fill="#6c7086">›</text>
+    <text x="503" y="80" fill="#cdd6f4">add retries to the payment client</text>
+    <text x="487" y="122" fill="#a6adc8">•</text>
+    <text x="503" y="122" fill="#cdd6f4" font-weight="bold">Explored</text>
+    <text x="503" y="143" fill="#6c7086">└</text>
+    <text x="519" y="143" fill="#a6adc8">Read client.ts, retry.ts</text>
+    <text x="487" y="185" fill="#a6adc8">•</text>
+    <text x="503" y="185" fill="#cdd6f4">Edited src/client.ts (+18 -3)</text>
+    <text x="487" y="227" fill="#a6adc8">◦<animate attributeName="opacity" values="1;0.2;1" dur="1.2s" repeatCount="indefinite"/></text>
+    <text x="503" y="227" fill="#a6adc8">Working (14s • esc to interrupt)</text>
+
+    <!-- Bottom right: the shell you are typing in, focused. -->
+    <text x="487" y="306"><tspan fill="#89dceb">~/dev/shop</tspan><tspan fill="#cdd6f4"> on </tspan><tspan fill="#cba6f7">main</tspan></text>
+    <text x="487" y="330"><tspan fill="#a6e3a1">❯ </tspan><tspan fill="#cdd6f4">git diff --stat</tspan><tspan fill="#f5e0dc">█<animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="1s" repeatCount="indefinite"/></tspan></text>
+
+    <!-- Unfocused panes are dimmed, as Ghostty does. -->
+    <rect x="20" y="52" width="450" height="450" fill="#11111b" fill-opacity="0.25"/>
+    <rect x="471" y="52" width="449" height="225" fill="#11111b" fill-opacity="0.25"/>
+
+    <!-- Blink: the same tint as shaders/attention.glsl, 4 % to 27 % amber over 2 s. -->
+    <rect x="20" y="52" width="450" height="450" fill="#ff912b" fill-opacity="0.04">
+      <animate attributeName="fill-opacity" values="0.04;0.27;0.04" keyTimes="0;0.5;1" calcMode="spline"
+               keySplines="0.37 0 0.63 1;0.37 0 0.63 1" dur="2s" repeatCount="indefinite"/>
+    </rect>
+
+    <line x1="470.5" y1="52" x2="470.5" y2="502" stroke="#313244"/>
+    <line x1="471" y1="277.5" x2="920" y2="277.5" stroke="#313244"/>
+  </g>
+</svg>
