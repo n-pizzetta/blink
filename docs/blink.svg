@@ -1,11 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="940" height="530" viewBox="0 0 940 530" xml:space="preserve" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="13">
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="590" viewBox="0 0 1000 590" xml:space="preserve" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="13">
   <title>Blink: the pane of the agent that waits for you pulses amber</title>
   <defs>
     <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
       <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity="0.35"/>
     </filter>
+    <clipPath id="frame"><rect width="1000" height="590" rx="20"/></clipPath>
+    <radialGradient id="warm" cx="60" cy="20" r="640" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff912b" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#ff912b" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cool" cx="980" cy="580" r="560" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d9468a" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#d9468a" stop-opacity="0"/>
+    </radialGradient>
     <clipPath id="window"><rect x="20" y="12" width="900" height="490" rx="12"/></clipPath>
   </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="1000" height="590" fill="#140f17"/>
+    <rect width="1000" height="590" fill="url(#warm)"/>
+    <rect width="1000" height="590" fill="url(#cool)"/>
+  </g>
+  <g transform="translate(30 38)">
 
   <rect x="20" y="12" width="900" height="490" rx="12" fill="#1e1e2e" filter="url(#shadow)"/>
   <g clip-path="url(#window)">
@@ -64,5 +80,6 @@
 
     <line x1="470.5" y1="52" x2="470.5" y2="502" stroke="#313244"/>
     <line x1="471" y1="277.5" x2="920" y2="277.5" stroke="#313244"/>
+  </g>
   </g>
 </svg>
