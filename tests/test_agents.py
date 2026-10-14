@@ -130,7 +130,10 @@ class Agent:
     def send(self, command):
         os.write(self.control, command.encode() + b"\n")
         if command != "exit":
-            return self.expect(f"DONE {command}".encode())
+            # The watcher can react before the agent reports DONE: keep that output.
+            before = self.expect(f"DONE {command}".encode())
+            self.output = before + self.output
+            return before
 
     def close(self):
         if self.process.poll() is None:
@@ -185,6 +188,8 @@ class HookTests(unittest.TestCase):
                 agent.send("answer")
                 agent.expect(CLEAR)
 
+    @unittest.skipIf(sys.platform.startswith("linux"),
+                     "Linux updates a terminal's access time at most every 8 seconds")
     def test_typing_in_the_pane_stops_the_pulse_and_the_same_request_stays_quiet(self):
         agent = self.start("claude")
         agent.send("wait")
