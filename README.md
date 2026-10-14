@@ -147,8 +147,10 @@ any other custom shader you use.
 - Palette slot 255 is reserved while a pane pulses. Text drawn with that indexed
   color is recolored meanwhile, then reset to your theme's value.
 - iTerm2 tab colors are per tab, not per split; the badge is per pane.
-- Only tested on macOS. On Linux the hooks should work; the Ghostty step looks
-  for the macOS app (`--app`).
+- Used on macOS only. On Linux the automated tests pass, but the kernel updates
+  a terminal's access time at most every 8 seconds: typing right after the
+  signal starts can go unnoticed until you type again. The Ghostty step of
+  `install` looks for the macOS app (`--app`).
 - Blink relies on how each CLI runs its hooks. Verified with Claude Code
   2.1.296, Codex CLI 0.162.0, Copilot CLI 1.0.95 and Ghostty 1.3.1; a later
   version can change that. `doctor` is the first thing to run if a pane stays
@@ -179,6 +181,7 @@ python3 -m unittest discover -s tests -v
 
 The tests run the real hooks from a fake agent in a real pseudo-terminal, for
 all three CLIs and the three terminal kinds. No model, credentials or network.
+See [`CONTRIBUTING.md`](./CONTRIBUTING.md) before opening a pull request.
 
 References: [Ghostty shaders](https://ghostty.org/docs/config/reference#custom-shader),
 [OSC 4 palette](https://ghostty.org/docs/vt/osc/4),
@@ -191,6 +194,7 @@ References: [Ghostty shaders](https://ghostty.org/docs/config/reference#custom-s
 
 - **Ideas, bugs, a terminal to support:** [open an issue](https://github.com/n-pizzetta/blink/issues).
 - **Security:** see [`SECURITY.md`](./SECURITY.md) to report a vulnerability privately.
+- **Contributing:** pull requests are welcome, see [`CONTRIBUTING.md`](./CONTRIBUTING.md).
 
 ## See also
 

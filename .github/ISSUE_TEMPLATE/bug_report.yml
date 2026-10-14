@@ -1,0 +1,46 @@
+name: Bug report
+description: A pane that does not light up, does not stop, or an install problem
+title: "bug: "
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What the agent was doing, what you expected, and what Blink did instead.
+    validations:
+      required: true
+  - type: textarea
+    id: doctor
+    attributes:
+      label: Output of `python3 blink.py doctor`
+      description: Run it from your clone while the problem happens. Paths contain your user name; redact them if you like.
+      render: text
+    validations:
+      required: true
+  - type: input
+    id: agent
+    attributes:
+      label: Agent and version
+      description: "e.g. `claude --version`, `codex --version`, `copilot --version`."
+    validations:
+      required: true
+  - type: input
+    id: terminal
+    attributes:
+      label: Terminal and version
+      description: "e.g. Ghostty 1.3.1, iTerm2 3.6, inside tmux or not."
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      description: "e.g. macOS 26, Ubuntu 24.04."
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Blink version
+      description: The release or commit you installed from (`git rev-parse --short HEAD`).
