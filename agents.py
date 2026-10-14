@@ -135,7 +135,7 @@ def agent_terminal() -> tuple[int, str] | None:
             return None
         parent, terminal, command = fields
         if Path(command.strip()).name.lstrip("-") not in SHELLS:
-            if terminal in ("??", "-") or not terminal:
+            if terminal in ("?", "??", "-") or not terminal:  # Linux, macOS, BSD.
                 return None
             return pid, terminal if terminal.startswith("/") else "/dev/" + terminal
         pid = int(parent)
