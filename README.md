@@ -1,6 +1,6 @@
 # Blink
 
-**See at a glance which coding agent is waiting for you.**
+**Your terminal pane lights up when your coding agent needs you.**
 
 When Claude Code, Codex CLI or GitHub Copilot CLI needs you (a permission, a
 question, a plan to approve, or simply the end of its answer), Blink lights up
